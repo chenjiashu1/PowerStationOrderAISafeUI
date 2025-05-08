@@ -72,6 +72,7 @@ export default defineComponent({
           setTimeout(() => {
             if (loginForm.username === 'admin' && loginForm.password === 'admin') {
               localStorage.setItem('isAuthenticated', 'true')
+              localStorage.setItem('username', loginForm.username)
               ElMessage.success('登录成功')
               router.push('/')
             } else {

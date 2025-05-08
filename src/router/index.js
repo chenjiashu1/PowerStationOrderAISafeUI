@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Login from '../views/Login.vue'
 import Dashboard from '../views/Dashboard.vue'
+import Welcome from '../views/Welcome.vue'
+import OrderList from '../views/OrderList.vue'
+import OrderDetail from '../views/OrderDetail.vue'
 
 const routes = [
   {
@@ -15,24 +18,23 @@ const routes = [
     meta: { requiresAuth: true },
     children: [
       {
-        path: 'monitor',
-        name: 'Monitor',
-        component: Dashboard
-      },
-      {
-        path: 'emergency',
-        name: 'Emergency',
-        component: Dashboard
-      },
-      {
-        path: 'warning',
-        name: 'Warning',
-        component: Dashboard
+        path: '',
+        name: 'Welcome',
+        component: Welcome,
+        meta: { title: '首页' }
       },
       {
         path: 'orders',
         name: 'Orders',
-        component: Dashboard
+        component: OrderList,
+        meta: { title: '订单管理' }
+      },
+      {
+        path: 'order-detail/:orderNo',
+        name: 'OrderDetail',
+        component: OrderDetail,
+        meta: { title: '订单详情' },
+        props: true
       }
     ]
   }
