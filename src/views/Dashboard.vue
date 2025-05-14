@@ -34,6 +34,10 @@
               <el-icon><Document /></el-icon>
               <span>订单管理</span>
             </el-menu-item>
+            <el-menu-item index="/knowledge-base">
+              <el-icon><Reading /></el-icon>
+              <span>知识库</span>
+            </el-menu-item>
           </el-menu>
         </el-aside>
 
@@ -48,7 +52,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useRouter } from 'vue-router'
-import { Document, HomeFilled } from '@element-plus/icons-vue'
+import { Document, HomeFilled, Reading } from '@element-plus/icons-vue'
 
 export default defineComponent({
   name: 'Dashboard',
